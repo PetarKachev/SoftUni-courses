@@ -1,2 +1,2 @@
-# SoftUni-courses
-Courses from my education in SoftUni
+# SoftUni-courses and Projects
+Courses from my education in SoftUni and different interesting projects.
