@@ -2,7 +2,7 @@ from collections import deque
 materials = list(map(int, input().split(" ")))
 magic = deque(list(map(int, input().split(" "))))
 
-presents = {150: "Doll", 250: "Wooden train", 300: "Teddy bear", 400: "Bicycle"}
+presents = {150: "Doll", 250: "Wooden train", 300: "Teddy test.py", 400: "Bicycle"}
 crafted_presents = {}
 
 while materials and magic:
@@ -30,7 +30,7 @@ while materials and magic:
     elif magic[0] <= 0:
         magic.popleft()
 
-if ("Doll" in crafted_presents and "Wooden train" in crafted_presents) or ("Teddy bear" in crafted_presents and "Bicycle" in crafted_presents):
+if ("Doll" in crafted_presents and "Wooden train" in crafted_presents) or ("Teddy test.py" in crafted_presents and "Bicycle" in crafted_presents):
     print("The presents are crafted! Merry Christmas!")
 else:
     print("No presents this Christmas!")
