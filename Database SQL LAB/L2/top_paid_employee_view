@@ -1,0 +1,6 @@
+CREATE VIEW new_view AS
+SELECT *
+FROM employees
+WHERE salary > 2000;
+
+SELECT * FROM new_view;
