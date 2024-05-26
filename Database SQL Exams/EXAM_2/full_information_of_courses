@@ -1,0 +1,17 @@
+SELECT
+	a.name AS address,
+	CASE
+		WHEN SUBSTRING(SUBSTRING(start::VARCHAR, 12, 13), 1, 2)::VARCHAR IN ('06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20') THEN 'Day'
+		WHEN SUBSTRING(SUBSTRING(start::VARCHAR, 12, 13), 1, 2)::VARCHAR IN ('21', '22', '23', '00', '01', '02', '03', '04', '05') THEN 'Night'
+	END AS day_time,
+	cr.bill,
+	cl.full_name,
+	cs.make,
+	cs.model,
+	cg.name AS category_name
+FROM courses cr
+JOIN addresses a ON cr.from_address_id = a.id
+JOIN cars cs ON cr.car_id = cs.id
+JOIN clients cl ON cr.client_id = cl.id
+JOIN categories cg ON cs.category_id = cg.id
+ORDER BY cr.id;

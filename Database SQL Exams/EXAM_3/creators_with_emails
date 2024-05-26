@@ -1,0 +1,9 @@
+SELECT
+	CONCAT(c.first_name, ' ', c.last_name) AS full_name,
+	c.email,
+	bg.rating
+FROM creators c
+JOIN creators_board_games cbg ON cbg.creator_id = c.id
+JOIN board_games bg ON cbg.board_game_id = bg.id
+WHERE bg.rating > 8.50
+ORDER BY full_name LIMIT 3;

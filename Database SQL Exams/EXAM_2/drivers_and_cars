@@ -1,0 +1,11 @@
+SELECT
+	d.first_name,
+	d.last_name,
+	c.make,
+	c.model,
+	c.mileage
+FROM drivers d
+JOIN cars_drivers c_d ON c_d.driver_id = d.id
+JOIN cars c ON c_d.car_id = c.id
+WHERE c.mileage IS NOT NULL
+ORDER BY c.mileage DESC, d.first_name ASC;

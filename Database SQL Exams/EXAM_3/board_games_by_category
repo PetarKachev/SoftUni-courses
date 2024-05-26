@@ -1,0 +1,9 @@
+SELECT
+	b_g.id,
+	b_g.name,
+	b_g.release_year,
+	c.name AS category_name
+FROM board_games b_g
+JOIN categories c ON b_g.category_id = c.id
+WHERE c.name IN ('Strategy Games', 'Wargames')
+ORDER BY b_g.release_year DESC;

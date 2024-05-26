@@ -1,0 +1,6 @@
+DELETE FROM clients cl
+
+WHERE NOT EXISTS (
+	SELECT 1 FROM courses cr
+	WHERE cr.client_id = cl.id
+) AND LENGTH(full_name) > 3;

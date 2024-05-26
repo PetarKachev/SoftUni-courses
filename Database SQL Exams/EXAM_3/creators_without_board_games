@@ -1,0 +1,8 @@
+SELECT
+	c.id,
+	CONCAT(c.first_name, ' ', c.last_name) AS creator_name,
+	c.email
+FROM creators c
+LEFT JOIN creators_board_games cbg ON cbg.creator_id = c.id
+LEFT JOIN board_games bg ON cbg.board_game_id = bg.id
+WHERE cbg.board_game_id IS NULL;

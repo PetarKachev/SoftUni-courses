@@ -1,0 +1,9 @@
+SELECT
+	cs.full_name,
+	COUNT(cs.id),
+	SUM(cr.bill) AS total_sum
+FROM clients cs
+JOIN courses cr ON cr.client_id = cs.id
+GROUP BY cs.full_name
+HAVING full_name LIKE ('_a%') AND COUNT(cs.id) > 1
+ORDER BY cs.full_name;
