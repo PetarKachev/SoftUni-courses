@@ -1,0 +1,6 @@
+SELECT
+	a.name,
+	a.country,
+	b.booked_at::DATE AS booked_at
+FROM apartments a
+LEFT OUTER JOIN bookings b ON a.booking_id = b.booking_id LIMIT 10;

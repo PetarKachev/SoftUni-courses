@@ -1,0 +1,3 @@
+SELECT COUNT(customer_id)
+FROM customers
+WHERE last_name = 'Hahn';

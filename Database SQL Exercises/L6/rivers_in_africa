@@ -1,0 +1,8 @@
+SELECT
+	c.country_name,
+	r.river_name
+FROM countries c
+FULL JOIN countries_rivers c_r ON c.country_code = c_r.country_code
+FULL JOIN rivers r ON c_r.river_id = r.id
+WHERE c.continent_code = 'AF'
+ORDER BY c.country_name ASC LIMIT 5;

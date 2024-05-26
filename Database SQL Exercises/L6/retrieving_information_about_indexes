@@ -1,0 +1,19 @@
+SELECT
+	tablename,
+	indexname,
+	indexdef
+FROM pg_indexes
+WHERE tablename in
+(
+	'continents',
+	'countries',
+	'countries_rivers',
+	'currencies',
+	'customers',
+	'monasteries',
+	'mountains',
+	'mountains_countries',
+	'peaks',
+	'rivers'
+)
+ORDER BY tablename ASC, indexname ASC;

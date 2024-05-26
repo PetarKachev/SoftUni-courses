@@ -1,0 +1,5 @@
+SELECT
+	AVG(area_in_sq_km) AS min_average_area
+FROM countries
+WHERE continent_code = 'OC'
+GROUP BY continent_code;
