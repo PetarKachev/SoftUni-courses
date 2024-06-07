@@ -1,0 +1,18 @@
+CREATE OR REPLACE FUNCTION fn_is_word_comprised (set_of_letters VARCHAR, word VARCHAR)
+RETURNS BOOL AS
+$$
+
+	DECLARE
+		count INT := 1;
+		comprised BOOL := TRUE;
+	BEGIN
+		WHILE count <= LENGTH(set_of_letters) LOOP
+		IF POSITION(SUBSTRING(LOWER(word) FROM count FOR 1) IN LOWER(set_of_letters)) = 0 THEN comprised := FALSE;
+		EXIT;
+		END IF;
+		count := count + 1;
+		END LOOP;
+		RETURN comprised;
+	END;
+$$
+LANGUAGE plpgsql;

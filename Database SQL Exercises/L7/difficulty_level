@@ -1,0 +1,18 @@
+CREATE OR REPLACE FUNCTION fn_difficulty_level (level INT)
+RETURNS VARCHAR AS
+$$
+	DECLARE
+		difficulty_level VARCHAR;
+	BEGIN
+
+		difficulty_level :=
+
+		CASE
+			WHEN level <= 40 THEN 'Normal Difficulty'
+			WHEN level >= 41 AND level <= 60 THEN 'Nightmare Difficulty'
+			WHEN level > 60 THEN 'Hell Difficulty'
+		END;
+		RETURN difficulty_level;
+	END;
+$$
+LANGUAGE plpgsql;

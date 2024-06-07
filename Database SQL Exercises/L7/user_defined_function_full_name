@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION fn_full_name (first_name VARCHAR, last_name VARCHAR)
+RETURNS VARCHAR AS
+$$
+	DECLARE
+		name VARCHAR;
+	BEGIN
+		name := CASE
+			WHEN first_name IS NOT NULL AND last_name IS NOT NULL THEN CONCAT(UPPER(SUBSTRING(first_name, 1, 1)), LOWER(SUBSTRING(first_name, 2, 30)), ' ', UPPER(SUBSTRING(last_name, 1, 1)), LOWER(SUBSTRING(last_name, 2, 30)))
+			WHEN first_name IS NOT NULL AND last_name IS NULL THEN CONCAT(UPPER(SUBSTRING(first_name, 1, 1)), LOWER(SUBSTRING(first_name, 2, 30)))
+			WHEN first_name IS NULL AND last_name IS NOT NULL THEN CONCAT(UPPER(SUBSTRING(last_name, 1, 1)), LOWER(SUBSTRING(last_name, 2, 30)))
+			WHEN first_name IS NULL AND last_name IS NULL THEN NULL
+		END;
+		RETURN name;
+	END;
+$$
+LANGUAGE plpgsql;

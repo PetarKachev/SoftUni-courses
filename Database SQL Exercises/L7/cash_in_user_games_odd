@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION fn_cash_in_users_games (game_name VARCHAR)
+RETURNS NUMERIC AS
+$$
+	DECLARE
+		total_cash NUMERIC;
+	BEGIN
+
+		total_cash := (
+		SELECT SUM(sum)
+		FROM (
+		SELECT
+		ROW_NUMBER() OVER (ORDER BY u_g.cash DESC) AS rang,
+		g.name,
+		SUM(u_g.cash)
+		FROM games g
+		JOIN users_games u_g ON u_g.game_id = g.id
+		GROUP BY g.name, u_g.cash
+		HAVING g.name = game_name ) subquery
+		WHERE rang % 2 != 0);
+
+		RETURN ROUND(total_cash, 2);
+	END;
+
+$$
+LANGUAGE plpgsql;
