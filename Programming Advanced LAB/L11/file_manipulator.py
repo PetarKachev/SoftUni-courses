@@ -23,7 +23,7 @@ while command != "End":
         else:
             print("An error occurred")
 
-    elif command[0] == "Delete":
+    elif command[0] == "delete":
         file_name = command[1]
         if os.path.exists(file_name):
             os.remove(file_name)

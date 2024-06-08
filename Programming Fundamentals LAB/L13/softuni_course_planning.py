@@ -8,7 +8,7 @@ while next_command != "course start":
     if command == "Add":
         if title not in subject_list:
             subject_list.append(title)
-    elif command == "Insert":
+    elif command == "insert":
         index = int(next_command_list[2])
         if index < len(subject_list):
             if title not in subject_list:

@@ -1,0 +1,4 @@
+UPDATE products p
+SET price = price * 1.1
+FROM feedbacks f
+WHERE f.product_id = p.id AND f.rate > 8;

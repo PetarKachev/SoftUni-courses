@@ -50,7 +50,7 @@ while command != "Stop":
                 else:
                     player_pos[1] -= 1
 
-    elif command[0] == "Update":
+    elif command[0] == "update":
         direction = command[1]
         value = command[2]
         if direction == "up":
@@ -101,7 +101,7 @@ while command != "Stop":
                 else:
                     player_pos[1] -= 1
 
-    elif command[0] == "Delete":
+    elif command[0] == "delete":
         direction = command[1]
         if direction == "up":
 

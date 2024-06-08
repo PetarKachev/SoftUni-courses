@@ -18,7 +18,7 @@ class TestTennisPlayerClass(TestCase):
     def test_younger_age__should_raise_error(self):
         with self.assertRaises(ValueError) as ve:
             self.tennis_player = TennisPlayer('Alex', 17, 0)
-        self.assertEqual(str(ve.exception), "Players must be at least 18 years of age!")
+        self.assertEqual(str(ve.exception), "players must be at least 18 years of age!")
 
     def test_add_new_win__not_existing__should_add_successfully(self):
         self.tennis_player = TennisPlayer('Alex', 20, 0)

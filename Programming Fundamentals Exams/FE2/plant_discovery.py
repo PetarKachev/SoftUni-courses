@@ -24,7 +24,7 @@ while command != "Exhibition":
         else:
             print("error")
 
-    elif command[0] == "Update":
+    elif command[0] == "update":
         plant_and_new_rarity = command[1].split(" - ")
         plant = plant_and_new_rarity[0]
         new_rarity = int(plant_and_new_rarity[1])

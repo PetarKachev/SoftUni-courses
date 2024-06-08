@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION fn_courses_by_client (phone_num VARCHAR(20))
+RETURNS INT AS
+$$
+	DECLARE
+		result INT;
+	BEGIN
+		SELECT COUNT(ct.id)
+		INTO result
+		FROM clients ct
+		JOIN courses cs ON cs.client_id = ct.id
+		WHERE ct.phone_number = phone_num;
+		RETURN result;
+	END;
+$$
+LANGUAGE plpgsql;

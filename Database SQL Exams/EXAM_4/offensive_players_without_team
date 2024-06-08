@@ -1,0 +1,12 @@
+SELECT
+	p.id,
+	CONCAT(p.first_name, ' ', p.last_name) AS full_name,
+	p.age,
+	p.position,
+	p.salary,
+	sd.pace,
+	sd.shooting
+FROM players p
+LEFT JOIN skills_data sd ON p.skills_data_id = sd.id
+LEFT JOIN teams t ON p.team_id = t.id
+WHERE p.position = 'A' AND sd.pace + sd.shooting > 130 AND t.established IS NULL;

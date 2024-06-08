@@ -8,7 +8,7 @@ while command != "Decode":
         num_letters = int(command[1])
         encrypted_message = encrypted_message[num_letters:] + encrypted_message[:num_letters]
 
-    elif command[0] == "Insert":
+    elif command[0] == "insert":
         index = int(command[1])
         value = command[2]
         encrypted_message = encrypted_message[:index] + value + encrypted_message[index:]
