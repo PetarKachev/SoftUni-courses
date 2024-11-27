@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="mb-4 text-center">Login to Your Account</h2>
+
+                <!-- Formulaire de connexion -->
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+
+                    <!-- Message d'erreur si le formulaire contient des erreurs -->
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            Please check your username and password and try again.
+                        </div>
+                    {% endif %}
+
+                    <!-- Champ pour le nom d'utilisateur -->
+                    <div class="form-group">
+                        <label for="id_username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="id_username" placeholder="Enter your username">
+                    </div>
+
+                    <!-- Champ pour le mot de passe -->
+                    <div class="form-group">
+                        <label for="id_password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="id_password" placeholder="Enter your password">
+                    </div>
+
+                    <!-- Boutons de soumission et lien pour s'inscrire -->
+                    <div class="form-group mt-4 text-center">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+
+                    <!-- Lien pour s'inscrire -->
+                    <div class="form-group text-center mt-3">
+                        <p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

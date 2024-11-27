@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <h2>{{ event.title }}</h2>
+            <p class="text-muted">Lieu : {{ event.location }}</p>
+            <p class="text-muted">Date : {{ event.date }}</p>
+            <p>{{ event.description }}</p>
+        </div>
+    </div>
+    <div align="center">
+        <a href="{% url 'event-list' %}" class="btn btn-secondary">Back to event list</a>
+        <a href="{% url 'event-modify' event_id=event.id %}" class="btn btn-secondary">Modify event</a>
+        <a href="{% url 'event-delete' event_id=event.id %}" class="btn btn-secondary">Delete event</a>
+    </div>
+{% endblock %}

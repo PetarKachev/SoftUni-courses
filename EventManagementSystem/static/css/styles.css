@@ -1,0 +1,113 @@
+/* styles.css */
+
+/* Styles de base */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Couleur de fond douce */
+    color: #333; /* Couleur du texte */
+}
+
+/* Barre de navigation */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004b9b;
+}
+
+/* Cartes d'événement */
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Pied de page */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Formulaires */
+.form-control {
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Titres */
+h1, h5 {
+    color: #0062cc; /* Couleur de la marque */
+}
+
+/* Effets de transition */
+.card, .btn {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.profile-picture img {
+    border: 5px solid #0062cc; /* Bordure autour de la photo de profil */
+    padding: 5px;
+}
+
+/* Boutons pour les actions utilisateur */
+.btn-outline-primary {
+    margin-right: 10px;
+    color: #0062cc;
+    border-color: #0062cc;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0062cc;
+    color: white;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Cartes pour les événements créés */
+.card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card_no_events_available {
+    color: blue;
+}

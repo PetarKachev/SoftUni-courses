@@ -1,0 +1,28 @@
+<!-- delete_profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="mb-4 text-center text-danger">Delete Your Profile</h2>
+
+                <!-- Message de confirmation pour la suppression de profil -->
+                <div class="alert alert-warning text-center">
+                    <p>Are you sure you want to delete your profile? This action is irreversible.</p>
+                </div>
+
+                <!-- Formulaire de confirmation de suppression de profil -->
+                <form method="post" class="delete-profile-form">
+                    {% csrf_token %}
+
+                    <!-- Boutons de confirmation et d'annulation -->
+                    <div class="form-group mt-4 text-center">
+                        <button type="submit" class="btn btn-danger">Yes, Delete My Profile</button>
+                        <a href="{% url 'user-profile' %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

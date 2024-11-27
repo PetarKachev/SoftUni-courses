@@ -1,0 +1,46 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Welcome Section -->
+    <div class="jumbotron text-center bg-primary text-white py-5 mb-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to Our Application!</h1>
+            <p class="lead">Discover and create events easily with our user-friendly platform.</p>
+            <a href="{% url 'event-list' %}" class="btn btn-light btn-lg">View Events</a>
+        </div>
+    </div>
+
+    <!-- Main Features Section -->
+    <div class="container features-section py-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="fas fa-calendar-alt fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Create Events</h5>
+                        <p class="card-text">Easily organize events and share them with the community.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Join the Community</h5>
+                        <p class="card-text">Connect with other users to participate in exciting events.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="fas fa-search fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Explore Events</h5>
+                        <p class="card-text">Search and find events that match your interests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
