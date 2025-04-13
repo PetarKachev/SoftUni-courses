@@ -1,0 +1,1 @@
+function multiply(num) { return console.log(num * 2) };
